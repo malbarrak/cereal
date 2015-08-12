@@ -1,0 +1,9 @@
+<form action="/cereal_create/" method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<input type='submit' vlue='Save Cereal'>
+
+</form>
