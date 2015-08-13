@@ -266,7 +266,7 @@ def login_view(request):
 	auth_user = authenticate(username=username, password=password)
 
 	if auth_user is not None:
-		if user.is_active:
+		if auth_user.is_active:
 			login(request, auth_user)
 			context['valid'] = "Login Successful"
 

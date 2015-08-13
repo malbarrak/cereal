@@ -13,6 +13,8 @@ class Cereal(models.Model):
 	manufacturer = models.ForeignKey('main.Manufacturer',null=True)
 	type = models.CharField(max_length=255,null=True)
 	display_shelf = models.IntegerField(null=True)
+	image = models.ImageField(upload_to="cereal", null=True)
+	info = models.TextField()
 	#nutrition_facts = models.OneToOneField('main.Nutrition_Facts',null=True)
 	
 	def __unicode__(self):

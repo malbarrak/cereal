@@ -16,6 +16,8 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -31,9 +33,9 @@ urlpatterns = [
     url(r'^cereal_create/$', 'main.views.cereal_create'),
     url(r'^signup/$', 'main.views.signup'),
     url(r'^login_view/$', 'main.views.login_view'),
-    #url)r'^logout_view/$', 'main.views.logout_view'),
+    url(r'^logout_view/$', 'main.views.logout_view'),
 
 
     # url(r'^cereal_create/$', 'main.views.cereal_create'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
